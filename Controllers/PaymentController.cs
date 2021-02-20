@@ -25,6 +25,9 @@ namespace xendit_csharp_example.Controllers
         [HttpPost]
         public String Post([FromBody] Payment body)
         {   
+            // Added minimum parameters to perform a succesful request to /v2/invoices.
+            // To add another parameters, go to https://developers.xendit.co/api-reference/#create-invoice
+            // and check for detailed parameters.
             var requestBody = new XenditInvoiceRequestBody();
             requestBody.ExternalId = body.ID;
             requestBody.Description = body.Description;
